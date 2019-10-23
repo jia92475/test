@@ -1,0 +1,75 @@
+
+資料參考
+https://exfast.me/2016/05/centos-install-7-x-lamp-environment-linux-apache-mariadb-php/
+
+yum install update -y
+
+sudo yum install httpd -y
+
+yum install mariadb mariadb-server -y
+
+service mariadb start
+/usr/bin/mysql_secure_installation
+123456
+
+
+
+yum install php php-mysql -y
+
+yum install epel-release -y
+
+yum clean all -y
+
+yum update -y
+
+yum install phpmyadmin -y
+
+service httpd restart
+
+firewall-cmd --add-service=http --permanent
+
+firewall-cmd --add-service=https --permanent
+
+	
+firewall-cmd --list-all --permanent
+
+
+service firewalld restart
+
+cd //etc/httpd/conf.d
+
+vi phpMyAdmin.conf
+
+找到
+<RequireAny>
+   Require ip 127.0.0.1
+   Require ip ::1
+</RequireAny>
+1
+2
+3
+4
+<RequireAny>
+   Require ip 127.0.0.1
+   Require ip ::1
+</RequireAny>
+
+在Require ip ::1下方新增自己的IP
+<RequireAny>
+   Require ip 127.0.0.1
+   Require ip ::1
+   Require ip 你的IP
+</RequireAny>
+1
+2
+3
+4
+5
+<RequireAny>
+   Require ip 127.0.0.1
+   Require ip ::1
+   Require ip 你的IP
+</RequireAny>
+
+	
+service httpd restart
