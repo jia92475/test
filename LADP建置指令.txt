@@ -1,5 +1,5 @@
 
-¸ê®Æ°Ñ¦Ò
+è³‡æ–™åƒè€ƒ
 https://exfast.me/2016/05/centos-install-7-x-lamp-environment-linux-apache-mariadb-php/
 
 yum install update -y
@@ -40,7 +40,7 @@ cd //etc/httpd/conf.d
 
 vi phpMyAdmin.conf
 
-§ä¨ì
+æ‰¾åˆ°
 <RequireAny>
    Require ip 127.0.0.1
    Require ip ::1
@@ -54,11 +54,11 @@ vi phpMyAdmin.conf
    Require ip ::1
 </RequireAny>
 
-¦bRequire ip ::1¤U¤è·s¼W¦Û¤vªºIP
+åœ¨Require ip ::1ä¸‹æ–¹æ–°å¢è‡ªå·±çš„IP
 <RequireAny>
    Require ip 127.0.0.1
    Require ip ::1
-   Require ip §AªºIP
+   Require ip ä½ çš„IP
 </RequireAny>
 1
 2
@@ -68,7 +68,7 @@ vi phpMyAdmin.conf
 <RequireAny>
    Require ip 127.0.0.1
    Require ip ::1
-   Require ip §AªºIP
+   Require ip ä½ çš„IP
 </RequireAny>
 
 	
